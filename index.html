@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音达康护 - 基于音频感知的智慧居家养老系统</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>音达康护</h1>
+            <h2>基于音频感知的智慧居家养老系统</h2>
+            <nav>
+                <ul>
+                    <li><a href="#introduction" class="smooth-scroll">项目背景</a></li>
+                    <li><a href="#solution" class="smooth-scroll">核心功能</a></li>
+                    <li><a href="#features" class="smooth-scroll">核心技术</a></li>
+                    <li><a href="#results" class="smooth-scroll">研究成果</a></li>
+                    <li><a href="#application" class="smooth-scroll">应用成果</a></li>
+                    <!-- <li><a href="#video-explanation" class="smooth-scroll">系统介绍视频</a></li> -->
+                    <li><a href="#contact" class="smooth-scroll">联系我们</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <section id="introduction" class="introduction">
+            <h3>项目背景</h3>
+            <p>
+                我国的老龄化趋势难以逆转，智慧养老需求显著增长。2022年，中国60岁及以上人口已达2.8亿，占总人口比例19.8%；65岁及以上人口达到2.1亿，占总人口比例14.9%。随着家庭养老功能的减弱，独居和空巢老人数量增加，他们的日常需求难以得到及时有效的回应。
+            </p>
+            <p>
+                政策层面大力推行智慧养老，旨在融合医疗和护理，提升服务质量。然而，现有智慧养老居家监测产品存在监控死角多、成本高、便利性不足等问题。本项目旨在解决这些痛点，特别是为无子女照顾的老人提供安全监测（占所有老人的70%）。
+            </p>
+            <div class="image-container">
+                <img src="images/3.png" alt="项目背景 - 老人跌倒示意图">
+            </div>
+        </section>
+        
+        <section id="solution" class="solution">
+            <h3>音达康护的解决方案</h3>
+            <p>
+                针对现有智慧养老监测的不足，我们提出并设计了“音达康护”——基于先进的音频感知技术和声音事件检测算法的智慧居家养老监测系统。该系统致力于通过科技与人文关怀的融合，为现代居家养老提供全新解决方案。
+            </p>
+            <ul>
+                <li><strong>实时监测与准确识别：</strong> 通过全天候拾音，系统能实时检测老人的居家活动声音，如跌倒行为、异常声音（哭喊、呻吟、求助），并立即报警或预警。</li>
+                <li><strong>简易部署与操作便捷：</strong> 硬件安装便捷，软件操作简单，为用户提供人性化服务。</li>
+                <li><strong>智能预警与社区支持：</strong> 发生紧急情况时，系统能自动联系社区支持，并同步信息至总控端及家属小程序，确保及时响应与处理。</li>
+                <li><strong>增值服务：</strong> 提供日常物资购买、健康咨询等服务，全面提升老年人生活质量。</li>
+            </ul>
+            <div class="image-container">
+                <img src="images/7.png" alt="音达康护系统运作流程图">
+            </div>
+        </section>
+        
+        <section id="features" class="features">
+            <h3>系统核心技术</h3>
+            <p>
+                “音达康护”系统通过以下核心技术模块，构建了完整的居家养老安全防护体系：
+            </p>
+            <ul>
+                <li><strong>声音事件检测 (SED) 技术：</strong> 采用预训练自监督学习模型的少样本低延迟声音事件检测技术，对音频信号进行特征提取与分类，识别特定声音事件。</li>
+                <li><strong>帧级音频师生变换器模型 (ATST-frame)：</strong> 利用大量未标记的音频数据学习声音特征表示，引入新学习模型与标记数据方法，适应居家老人环境，提高检测性能和模型泛化能力。</li>
+                <li><strong>敏感音源活动检测与增强技术：</strong> 通过UNet模型预测并去除噪声，得到降噪音频，显著提高敏感声音事件的识别精度和清晰度，有效应对复杂声学环境。</li>
+                <li><strong>监控视频跌倒行为检测：</strong> 结合YOLOv5目标检测、DeepSORT目标跟踪及SlowFast动作识别技术，实现端到端的视频跌倒行为检测模型，及时预警。</li>
+                <li><strong>多平台支持：</strong> 包括Web中央总控平台（供管理员使用）和小程序端（供用户及线下工作人员使用），实现全天候监控、历史回放、任务派发与实时反馈。</li>
+            </ul>
+            <div class="image-container2">
+                <img src="images/10.png" alt="声音事件检测技术流程图">
+                <img src="images/11.png" alt="ATST-frame 模型">
+                <img src="images/13.png" alt="视频跌倒行为检测模型">
+            </div>
+        </section>
+        
+        <section id="results" class="results">
+            <h3>系统架构与平台</h3>
+            <p>
+                系统整体架构清晰，分为应用层、业务层、支撑层、数据层和物理层，确保系统稳定高效运行。数据通过音视频采集设备收集，经过处理和分析后，在各平台进行展示和管理。
+            </p>
+            <ul>
+                <li><strong>系统E-R图：</strong> 清晰展示了家庭用户、监控点、事件、管理人员和任务之间的关系。</li>
+                <li><strong>Web平台：</strong> 中央控制平台，提供用户登录、监控画面查看、新增监控点、历史视频回放、监控点配置等功能。</li>
+                <li><strong>小程序端：</strong> 用户及线下工作人员平台，支持实时监控、历史事件查看、任务查看、个人信息管理等。</li>
+                <li><strong>终端设备：</strong> 采用高清摄像头（如海康威视设备）和高品质麦克风，支持高效音视频处理、数据保存、远程访问和实时数据传输。</li>
+            </ul>
+            <div class="image-container2">
+                 <img src="images/8.png" alt="整体架构图">
+                 <img src="images/14.png" alt="小程序端界面">
+                 <img src="images/15.png" alt="Web平台界面">
+            </div>
+             <p style="text-align:center; font-size: 0.9em;">
+                图片来源: PDF 第 8 页 (整体架构), 第 14 页 (小程序), 第 15 页 (Web平台)
+            </p>
+        </section>
+        
+        <section id="application" class="application"> <h3>应用成果与合作</h3>
+            <p>
+                “音达康护”项目不仅在技术上有所突破，也积极寻求实际应用与合作。
+            </p>
+            <ul>
+                <li><strong>荣誉认证：</strong> 本作品在第六届数字中国建设峰会中获得“十佳数字音惠案例”证书，并被中华人民共和国中央人民政府官网报道。</li>
+                <li><strong>企业合作：</strong> 已与武汉某科技有限公司达成初步合作意向，共同推进项目的试验和应用。</li>
+                <li><strong>产业链定位：</strong> 项目定位于智慧养老产业链的中游，提供基于物联网、云计算和人工智能技术的智慧养老监护设备和服务。</li>
+            </ul>
+            <div class="image-container">
+                <img src="images/19.png" alt="应用成果 - 合作意向书与获奖证书">
+            </div>
+        </section>
+<!--         
+        <section id="video-explanation" class="video-explanation">
+            <h3>系统介绍视频</h3>
+            <div class="video-container">
+                <video controls>
+                    <source src="video/Smart.mp4" type="video/mp4">
+                    您的浏览器不支持视频播放，请升级您的浏览器或使用支持HTML5的浏览器。
+                </video>
+            </div>
+        </section> -->
+
+        <section id="contact" class="contact">
+            <h3>联系我们</h3>
+            <p>如需了解更多关于“音达康护”系统的信息或有合作意向，欢迎通过以下方式联系我们：</p>
+            <form id="contactForm">
+                <label for="name">姓名:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">邮箱:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">留言:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
+                <button type="submit">发送</button>
+            </form>
+        </section>
+
+         <footer>
+            <p>&copy; 2024 音达康护 - 基于音频感知的智慧居家养老系统</p>
+        </footer>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
